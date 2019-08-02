@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://gp888.gp451.com/xad/sj111.html -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta id="viewport" name="viewport" content="width=640,user-scalable=no,initial-scale=0.5">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>股票诊断</title>
+    <link rel="stylesheet" href="./style/animate.min.css">
+    <link rel="stylesheet" href="./style/banner.css">
+    <link rel="stylesheet" href="./style/cssconfirm_m.css">
+    <link rel="stylesheet" href="./style/progress_m.css">
+    <link rel="stylesheet" href="./style/style.css">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/tuiguan.js"></script>
+    <style type="text/css">
+        .video {
+            height: 379px;
+            width: 87%;
+            margin-left: 6%;
+            background-color: black;
+        }
+
+        .movie {
+            height: 379px;
+            width: 87%;
+            margin-left: 6%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="form-1" class="dialog4">
+    <div id="exit" class="circle4">
+    </div>
+    <div class="result center">
+        <span id="code" class="cName">博威合金</span><span class="s-zg-res">诊断报告已调取完成</span>
+    </div>
+    <p class="prompt s-zg-title top35">
+        每个手机号限领一次</p>
+    <input class="dialog4_input center" id="tgMobile" name="tgMobile" placeholder="请输入接收短信手机号码" maxlength="11"
+           type="tel">
+    <div class="dialog4_btn s-zg-btn  center bold" id="btnTg">
+        免费查看
+    </div>
+    <div class="promise center">
+        绝不泄露您的个人信息<br/>稍后会有客服人员联系您
+    </div>
+</div>
+<!-- 弹窗结束-->
+<script>
+    // var layer  =layui.layer;
+    // layer.msg('hello');
+
+</script>
+<div class="zhegai">
+</div>
+<div class="main">
+    <div class="roll">
+    </div>
+    <div class="content">
+        <div class="head">
+            <div class="stockStateContent stockStateNormal">
+                <!--<p class="stockState">休盘</p>-->
+            </div>
+            <div class="row">
+                <div class="gupiao">
+                    <div class="t1">
+                        <div id="gName" class="gName" style=" -webkit-filter: blur(10px);">博威合金</div>
+                        <div id="scode" class="gCode center" style=" -webkit-filter: blur(10px);">(601137)</div>
+                    </div>
+                    <div class="t2">
+                        <div class="zhishu">
+                            <span id="zhangdie" class="xianjia" style="color: red;">9.22</span>
+                            <img src="#" alt="" style="display:none;opacity: 1; visibility: visible;"></div>
+                        <div>
+                            <span class="zhangdie red" style="color: rgb(238, 58, 35);"></span> <span
+                                class="zhangfu red" style="color: rgb(238, 58, 35);"></span>
+                        </div>
+                        <div class="time" id="new_data">
+                            <font id="now-time"> </font>
+                        </div>
+                    </div>
+                </div>
+                <div class="dongtai">
+                    <div class="tablecontent">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    今开
+                                </th>
+                                <th>
+                                    高点
+                                </th>
+                                <th>
+                                    竞买价
+                                </th>
+                                <th>
+                                    成交量
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="jinkai" class="jinkai">9.15</td>
+                                <td id="gaodian" class="zuigao">9.42</td>
+                                <td id="jinmai" class="huanshou">0.74%</td>
+                                <td id="chenjiaolian" class="chengjiaoliang">419.37万</td>
+                            </tr>
+                            <tr style="height: 12px">
+                                <td style="height: 16px;">
+                                </td>
+                            </tr>
+                            </tbody>
+                            <thead>
+                            <tr>
+                                <th>
+                                    昨收
+                                </th>
+                                <th>
+                                    低点
+                                </th>
+                                <th>
+                                    竞卖价
+                                </th>
+                                <th>
+                                    成交额
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td id="zuoshou" class="zuoshou">9.15</td>
+                                <td id="didian" class="zuidi">9.11</td>
+                                <td id="jinmaijia" class="zhenfu">3.39%</td>
+                                <td id="chenjiaoe" class="chengjiaoe">0.39亿</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="imgContent center">
+                <div class="inputBgb" style="margin-top: 40px;">
+                    <input id="tgName" type="tel" autocomplete="false" class="phone gpdma" maxlength="6"
+                           placeholder="请输入股票代码">
+
+                </div>
+                <div style="margin-top:10px;font-size:20px;">稍后会有客服人员联系您</div>
+                <div class="btnBg center" id="btnBg_a">
+                    立即诊股
+                </div>
+
+                <h2 class="imgContent_title">
+                    买了跌？卖了涨？空仓就手痒？</h2>
+                <div class="dimension_box">
+                    <div class="dimension_name">
+                        <h3 class="dimensionName gName">博威合金</h3>
+                        <h3 class="dimensionTxt">
+                            明日预测</h3>
+                    </div>
+                    <div class="dimension_bg">
+                        <p class="p1">
+                            <i></i><span class="dimensionName" style=" -webkit-filter: blur(10px);">博威合金</span>会不会涨</p>
+                        <p class="p2">
+                            <i></i><span class="dimensionName" style=" -webkit-filter: blur(10px);">博威合金</span>利好消息</p>
+                        <p class="p3">
+                            <i></i><span class="dimensionName" style=" -webkit-filter: blur(10px);">博威合金</span>会不会跌</p>
+                        <p class="p4">
+                            <i></i><span class="dimensionName" style=" -webkit-filter: blur(10px);">博威合金</span>涨多少</p>
+                        <p class="p5">
+                            <i></i><span class="dimensionName" style=" -webkit-filter: blur(10px);">博威合金</span>精准买卖点</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form formBlock">
+                <div id="Btn_2" class="btnBg center pulse animated infinite gpout">
+                    领取<span id="Btn_2_1" style=" -webkit-filter: blur(10px);">博威合金</span>诊断报告
+                </div>
+                <p class="center tips">
+                    预测结果仅供参考，请以真实开盘为准</p>
+                <div class="video">
+                    <!--<iframe width="100%" height="100%" src="./video/video.mp4" frameborder=0 allowfullscreen></iframe>-->
+                    <video poster="images/p6.jpg" id="video" autoplay="autoplay" class="movie" id="movie" controls="controls">
+                        <source  src="video/video.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+                <div class="page_box">
+                    <div id="page_1" class="imgContent_page page1" style="top: 65px; left: 68px; z-index: 1;">
+                    </div>
+                    <div id="page_2" class="imgContent_page page2" style="top: 0px; left: 30px; z-index: 2;">
+                    </div>
+                </div>
+                <div style="text-align: right; font-size: 30px">历史数据仅供参考</div>
+                <div class="tableBg">
+                    <div class="tableCon">
+                        <table class="sharesList" style="margin-top: -1024px; transition: all 0.7s ease 0s;">
+                            <tbody>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******药
+                                </td>
+                                <td class="tdLast">
+                                    <span>强势上攻，寻机低吸</span>
+                                </td>
+                                <td class="red">
+                                    10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ****达
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空强势上扬,持有为宜</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******健
+                                </td>
+                                <td class="tdLast">
+                                    <span>主力短期强势，考虑买入</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******份
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩平稳，且短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    6.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******际
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩一般，但短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    5.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******本
+                                </td>
+                                <td class="tdLast">
+                                    <span>中期方向不明，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******融
+                                </td>
+                                <td class="tdLast">
+                                    <span>横盘震荡，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.0%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******气
+                                </td>
+                                <td class="tdLast">
+                                    <span>表现不佳，逢高减磅</span>
+                                </td>
+                                <td class="green">
+                                    -8.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******业
+                                </td>
+                                <td class="tdLast">
+                                    <span>可高抛低吸，摊低成本</span>
+                                </td>
+                                <td class="green">
+                                    -5.2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******材
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空下行，观望</span>
+                                </td>
+                                <td class="green">
+                                    -4.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******药
+                                </td>
+                                <td class="tdLast">
+                                    <span>强势上攻，寻机低吸</span>
+                                </td>
+                                <td class="red">
+                                    10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ****达
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空强势上扬,持有为宜</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******健
+                                </td>
+                                <td class="tdLast">
+                                    <span>主力短期强势，考虑买入</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******份
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩平稳，且短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    6.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******际
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩一般，但短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    5.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******本
+                                </td>
+                                <td class="tdLast">
+                                    <span>中期方向不明，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******融
+                                </td>
+                                <td class="tdLast">
+                                    <span>横盘震荡，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.0%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******气
+                                </td>
+                                <td class="tdLast">
+                                    <span>表现不佳，逢高减磅</span>
+                                </td>
+                                <td class="green">
+                                    -8.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******业
+                                </td>
+                                <td class="tdLast">
+                                    <span>可高抛低吸，摊低成本</span>
+                                </td>
+                                <td class="green">
+                                    -5.2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******材
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空下行，观望</span>
+                                </td>
+                                <td class="green">
+                                    -4.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******药
+                                </td>
+                                <td class="tdLast">
+                                    <span>强势上攻，寻机低吸</span>
+                                </td>
+                                <td class="red">
+                                    10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ****达
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空强势上扬,持有为宜</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******健
+                                </td>
+                                <td class="tdLast">
+                                    <span>主力短期强势，考虑买入</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******份
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩平稳，且短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    6.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******际
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩一般，但短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    5.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******本
+                                </td>
+                                <td class="tdLast">
+                                    <span>中期方向不明，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******融
+                                </td>
+                                <td class="tdLast">
+                                    <span>横盘震荡，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.0%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******气
+                                </td>
+                                <td class="tdLast">
+                                    <span>表现不佳，逢高减磅</span>
+                                </td>
+                                <td class="green">
+                                    -8.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******业
+                                </td>
+                                <td class="tdLast">
+                                    <span>可高抛低吸，摊低成本</span>
+                                </td>
+                                <td class="green">
+                                    -5.2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******材
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空下行，观望</span>
+                                </td>
+                                <td class="green">
+                                    -4.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******药
+                                </td>
+                                <td class="tdLast">
+                                    <span>强势上攻，寻机低吸</span>
+                                </td>
+                                <td class="red">
+                                    10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ****达
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空强势上扬,持有为宜</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******健
+                                </td>
+                                <td class="tdLast">
+                                    <span>主力短期强势，考虑买入</span>
+                                </td>
+                                <td class="red">
+                                    7.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******份
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩平稳，且短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    6.7%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******际
+                                </td>
+                                <td class="tdLast">
+                                    <span>业绩一般，但短期走势加强...</span>
+                                </td>
+                                <td class="red">
+                                    5.3%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******本
+                                </td>
+                                <td class="tdLast">
+                                    <span>中期方向不明，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******融
+                                </td>
+                                <td class="tdLast">
+                                    <span>横盘震荡，暂时观望</span>
+                                </td>
+                                <td class="green">
+                                    -10.0%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******气
+                                </td>
+                                <td class="tdLast">
+                                    <span>表现不佳，逢高减磅</span>
+                                </td>
+                                <td class="green">
+                                    -8.1%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******业
+                                </td>
+                                <td class="tdLast">
+                                    <span>可高抛低吸，摊低成本</span>
+                                </td>
+                                <td class="green">
+                                    -5.2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdFrist">
+                                    ******材
+                                </td>
+                                <td class="tdLast">
+                                    <span>跳空下行，观望</span>
+                                </td>
+                                <td class="green">
+                                    -4.3%
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div id="Btn_3" class="btnBg center pulse animated infinite gpout">
+                    领取<span id="Btn_3-1" style=" -webkit-filter: blur(10px);">博威合金</span>诊断报告
+                </div>
+                <p class="center tips">
+                    每个号码限领一次</p>
+                <p class="center" style="color: #696363; margin-top: 24px;">
+                    投资有风险 入市需谨慎<br> 从事证券投资，请通过合法证券经营机构进行购买，
+                    <br> 合法机构名单可到中国证监会网站（www.csrc.gov.cn）查询
+                    <br> 安徽大时代证券投资咨询有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loadBox" id="loadBox">
+    <div class="load_content">
+        <div class="load_title">
+            <div class="load_discuss">
+                正在从数据库中调取<span class="kindName">诊断</span>报告<span class="spot">...</span></div>
+            <div class="load_barbox">
+                <div class="load_barline">
+                    <div style="width: 0;" class="load_charts">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="confirm_stay" id="confirm_stay">
+    <p class="confirm_stay_txt">
+        您确定要放弃这次让<span>资产翻倍</span>的机会吗？</p>
+    <p class="confirm_refuse" id="confirm_refuse">
+    </p>
+    <p class="confirm_accept" id="confirm_accept">
+    </p>
+</div>
+<!--<script src="./style/default.js"></script>-->
+
+</body>
+
+</html>

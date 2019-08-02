@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+    <mapper namespace="com.zybar.bar.dao.TuiguanMapper">
+
+
+        <insert id="insertPhone" parameterType="com.zybar.bar.model.Phone">
+            insert into tb_phone(phone) value (#{phone})
+        </insert>
+
+    </mapper>
